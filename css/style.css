@@ -1,0 +1,116 @@
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+:root {
+  --soft-violet: hsl(273, 75%, 66%);
+  --soft-blue: hsl(240, 73%, 65%);
+  --dark-blue: hsl(238, 29%, 16%);
+  --soft-red: hsl(14, 88%, 65%);
+  --very-grayish-blue: hsl(237, 12%, 33%);
+  --dark-grayish-blue: hsl(240, 6%, 50%);
+  --light-grayish: hsl(240, 5%, 91%);
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-size: 12px;
+  font-family: "Kumbh Sans", sans-serif;
+  background: linear-gradient(180deg, var(--soft-violet), var(--soft-blue))
+    no-repeat;
+  background-size: cover;
+}
+
+h1,
+dd {
+  margin: 0;
+  padding: 0;
+}
+
+.box {
+  background: white;
+  border-radius: 2em;
+  margin: 9.3rem 1.5rem;
+  padding: 3rem 1.5625rem;
+}
+
+/* WOMAN COMPUTER */
+.box__woman {
+  position: absolute;
+  max-width: 100%;
+  left: 50%;
+  transform: translateX(-55%);
+  top: 8vh;
+}
+.box__back {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-49%, -10%);
+}
+
+/* TITLE OF THE BOX */
+.box__title {
+  margin-top: 5.3rem;
+  margin-bottom: 1.2rem;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--dark-blue);
+}
+
+/* ACCORDEON */
+
+.box__term {
+  display: flex;
+  font-size: 1.1em;
+  font-weight: 400;
+  color: var(--very-grayish-blue);
+  padding: 1rem 0;
+  justify-content: space-between;
+  align-items: center;
+}
+.box__term.ativo {
+  font-weight: 700;
+}
+.box__term::after {
+  content: "";
+  width: 0.625rem;
+  height: 0.625rem;
+  background: url(../images/icon-arrow-down.svg) no-repeat;
+}
+.box__term.ativo::after {
+  transform: rotate(180deg);
+  margin-bottom: 0.5rem;
+}
+.box__description {
+  color: var(--dark-grayish-blue);
+  font-weight: 400;
+  height: 0;
+  overflow: hidden;
+}
+.box__description.ativo {
+  height: 39px;
+}
+.box__divisor {
+  position: relative;
+}
+
+.box__divisor::after {
+  content: "";
+  display: block;
+  border-bottom: 1px solid var(--light-grayish);
+}
