@@ -1,35 +1,27 @@
 function accordion() {
   const boxTerm = document.querySelectorAll(".box__term");
+  const boxTermBig = document.querySelectorAll(".box__term--big");
   const activeClass = "ativo";
+  const specialClass = "box__description--big";
 
   if (boxTerm.length) {
     function collapsing() {
       this.classList.toggle(activeClass);
       this.nextElementSibling.classList.toggle(activeClass);
     }
+    function collapsingBig() {
+      this.classList.toggle(activeClass);
+      this.nextElementSibling.classList.toggle(specialClass);
+    }
 
     boxTerm.forEach((term) => {
       term.addEventListener("click", collapsing);
+    });
+
+    boxTermBig.forEach((termBig) => {
+      termBig.addEventListener("click", collapsingBig);
     });
   }
 }
 
 accordion();
-
-// Can i do this?
-
-const body = document.querySelector("body");
-const imageWoman = document.querySelector(".box__woman");
-const imageBack = document.querySelector(".box__back");
-const box__image = document.querySelector(".box__image");
-
-function mudaImagem(event) {
-  if (event.currentTarget.innerWidth >= 768) {
-    imageWoman.src = "images\\illustration-woman-online-desktop.svg";
-    imageBack.src = "images\\bg-pattern-desktop.svg";
-  } else {
-    imageWoman.src = "images\\illustration-woman-online-mobile.svg";
-    imageBack.src = "images\\bg-pattern-mobile.svg";
-  }
-}
-window.addEventListener("resize", mudaImagem);

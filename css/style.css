@@ -2,6 +2,7 @@
   font-size: 11px;
   text-align: center;
 }
+
 .attribution a {
   color: hsl(228, 45%, 44%);
 }
@@ -17,6 +18,7 @@
 }
 
 html {
+  /* height: 100vh; */
   box-sizing: border-box;
 }
 
@@ -32,6 +34,8 @@ body {
   background: linear-gradient(180deg, var(--soft-violet), var(--soft-blue))
     no-repeat;
   background-size: cover;
+
+  /* min-height: 100vh; */
 }
 
 h1,
@@ -41,41 +45,48 @@ dd {
 }
 
 .box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  position: relative;
+
   background: white;
   border-radius: 2em;
-  margin: 9.3rem 1.5rem;
-  padding: 0rem 1.5625rem 3rem 1.5625rem;
-}
 
-.box__image {
-  position: relative;
-  height: 8.75rem;
+  margin: 9.375rem 1.5rem 5.3125rem 1.5rem;
+  padding: 0 1.6875rem 3.125rem 1.6875rem;
 }
 
 /* WOMAN COMPUTER */
-.box__woman {
-  position: absolute;
-  max-width: 100%;
-  bottom: 37%;
+.box__images {
+  background: url("../images/bg-pattern-mobile.svg") no-repeat;
+
+  height: 9.58em;
+  width: 25em;
+
+  background-position: top center;
   left: 50%;
-  transform: translateX(-56%);
 }
 
-.box__back {
-  position: absolute;
-  max-width: 100%;
-  bottom: 27%;
-  left: 50%;
-  transform: translateX(-50%);
+.box__woman {
+  background: url("../images/illustration-woman-online-mobile.svg") no-repeat;
+
+  height: 16.67em;
+  width: 25em;
+
+  position: relative;
+  top: -95%;
 }
 
 /* TITLE OF THE BOX */
 .box__title {
-  margin-top: 0;
   margin-bottom: 1.2rem;
+
   text-align: center;
   font-size: 2rem;
   font-weight: 700;
+
   color: var(--dark-blue);
 }
 
@@ -83,7 +94,17 @@ dd {
 
 .box__term {
   display: flex;
-  font-size: 1.1em;
+  font-size: 1.12em;
+  font-weight: 400;
+  color: var(--very-grayish-blue);
+  padding: 1rem 0;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.box__term--big {
+  display: flex;
+  font-size: 1.12em;
   font-weight: 400;
   color: var(--very-grayish-blue);
   padding: 1rem 0;
@@ -92,6 +113,12 @@ dd {
 }
 
 .box__term.ativo {
+  color: var(--dark-blue);
+  font-weight: 700;
+  padding-bottom: 0;
+}
+
+.box__term--big.ativo {
   color: var(--dark-blue);
   font-weight: 700;
 }
@@ -103,20 +130,38 @@ dd {
   background: url(../images/icon-arrow-down.svg) no-repeat;
 }
 
-.box__term.ativo::after {
-  transform: rotate(180deg);
-  margin-bottom: 0.5rem;
+.box__term--big::after {
+  content: "";
+  width: 0.625rem;
+  height: 0.625rem;
+  background: url(../images/icon-arrow-down.svg) no-repeat;
 }
 
+.box__term.ativo::after {
+  transform: rotate(180deg);
+}
+
+.box__term--big.ativo::after {
+  transform: rotate(180deg);
+}
 .box__description {
   color: var(--dark-grayish-blue);
+  line-height: 1.5em;
   font-weight: 400;
+
   height: 0;
+  margin: 0;
   overflow: hidden;
+  width: 90%;
 }
 
 .box__description.ativo {
-  height: 39px;
+  height: 34px;
+  margin: 0.8em 0em 1.5em 0;
+}
+
+.box__description--big {
+  height: 70px;
 }
 
 .box__divisor {
@@ -127,74 +172,4 @@ dd {
   content: "";
   display: block;
   border-bottom: 1px solid var(--light-grayish);
-}
-
-@media screen and (max-width: 320px) {
-  .box__woman {
-    bottom: 45%;
-  }
-  .box__back {
-    bottom: 36%;
-    max-width: 90%;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  html {
-    height: 100%;
-  }
-  body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    height: 100%;
-  }
-  .box {
-    display: flex;
-    /* margin: 9.3rem 3rem; */
-    /* height: 500px;
-    width: 700px; */
-  }
-
-  .box__image {
-    flex: 1;
-  }
-
-  .box2 {
-    flex: 1;
-  }
-}
-
-@media screen and (min-width: 1100px) {
-  .box {
-    max-width: 57.5rem;
-    max-height: 31.25rem;
-    display: flex;
-    padding: 4.375rem 6rem 0 6rem;
-    gap: 2rem;
-  }
-  .box__image {
-    flex: 1;
-    height: 25rem;
-  }
-  .box__woman {
-    max-width: 440px;
-    bottom: 22%;
-    left: 32%;
-    transform: 0;
-  }
-  .box__back {
-    max-width: 440px;
-
-    bottom: 10%;
-    left: 25%;
-    transform: translateX(-50%);
-  }
-  .box__title {
-    text-align: left;
-  }
-  .box2 {
-    flex: 1;
-  }
 }
