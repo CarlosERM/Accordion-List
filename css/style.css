@@ -107,6 +107,9 @@ dd {
   justify-content: space-between;
   align-items: center;
 }
+.box__term:hover {
+  color: var(--soft-red);
+}
 
 .box__term--big {
   display: flex;
@@ -122,21 +125,27 @@ dd {
   justify-content: space-between;
   align-items: center;
 }
-
+.box__term--big:hover {
+  color: var(--soft-red);
+}
 .box__term.ativo {
   cursor: pointer;
   color: var(--dark-blue);
   font-weight: 700;
   /* padding-bottom: 0; */
 }
-
+.box__term.ativo:hover {
+  color: var(--soft-red);
+}
 .box__term--big.ativo {
   cursor: pointer;
 
   color: var(--dark-blue);
   font-weight: 700;
 }
-
+.box__term--big.ativo:hover {
+  color: var(--soft-red);
+}
 .box__term::after {
   content: "";
 
@@ -196,6 +205,8 @@ dd {
 }
 
 @media screen and (min-width: 768px) {
+  /* ADJUSTING THE BIG BOX */
+
   .box {
     top: 50%;
     transform: translateY(-50%);
@@ -209,35 +220,74 @@ dd {
   }
 }
 @media screen and (min-width: 900px) {
+  /* ADJUSTING THE BIG BOX */
   .box {
-    overflow: hidden;
+    background: url("../images/bg-pattern-desktop.svg") no-repeat, white;
+    background-size: 49.2rem 50.438rem;
+    background-position: top 62% left -288%, top 0 left 0px;
+
     padding: 0;
+
     flex-direction: row;
     align-content: center;
+
+    max-width: 57.5rem;
+    max-height: 31.875rem;
+
+    gap: 7rem;
+
+    overflow: hidden;
   }
+
   /* WOMAN COMPUTER */
   .box__images {
-    background: url("../images/bg-pattern-desktop.svg") no-repeat;
-    
     width: 20rem;
     height: 20rem;
-
+    background: none;
     flex: 1;
   }
 
   .box__woman {
     background: url("../images/illustration-woman-online-desktop.svg") no-repeat;
     top: 0;
-    left: -18%;
+    left: -21%;
     width: 30rem;
     height: 22.625rem;
-    max-width:100%:
+    /* max-width: 100%; */
   }
   .box__title {
     margin-top: 0;
+    text-align: left;
   }
   .box2 {
     flex: 1;
     padding: 4.5625rem 5.9375rem 5.125rem 0;
+  }
+  .box__description--big {
+    height: 57px;
+  }
+  .box__description.ativo {
+    height: 42px;
+    margin: 0;
+  }
+  /* POSITIONING THE LITTLE BOX */
+  .little-box {
+    background: url("../images/illustration-box-desktop.svg");
+    width: 191px;
+    height: 184px;
+    position: absolute;
+    z-index: 1;
+    top: 47vh;
+    right: 75vw;
+  }
+}
+
+@media screen and (min-width: 968px) {
+  .box {
+    /* overflow: hidden; */
+
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
   }
 }
