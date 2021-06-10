@@ -18,7 +18,6 @@
 }
 
 html {
-  /* height: 100vh; */
   box-sizing: border-box;
 }
 
@@ -29,13 +28,12 @@ html {
 }
 
 body {
+  height: 100vh;
   font-size: 12px;
   font-family: "Kumbh Sans", sans-serif;
   background: linear-gradient(180deg, var(--soft-violet), var(--soft-blue))
     no-repeat;
   background-size: cover;
-
-  /* min-height: 100vh; */
 }
 
 h1,
@@ -50,11 +48,13 @@ dd {
   align-items: center;
 
   position: relative;
+  top: 50%;
+  transform: translateY(-50%);
 
   background: white;
   border-radius: 2em;
 
-  margin: 9.375rem 1.5rem 5.3125rem 1.5rem;
+  margin: 3rem 1.5rem 0 1.5rem;
   padding: 0 1.6875rem 3.125rem 1.6875rem;
 }
 
@@ -91,49 +91,67 @@ dd {
 }
 
 /* ACCORDEON */
-
+.box2 {
+  width: 100%;
+}
 .box__term {
+  cursor: pointer;
   display: flex;
+
   font-size: 1.12em;
   font-weight: 400;
+
   color: var(--very-grayish-blue);
   padding: 1rem 0;
+
   justify-content: space-between;
   align-items: center;
 }
 
 .box__term--big {
   display: flex;
+  cursor: pointer;
+
   font-size: 1.12em;
   font-weight: 400;
+
   color: var(--very-grayish-blue);
+
   padding: 1rem 0;
+
   justify-content: space-between;
   align-items: center;
 }
 
 .box__term.ativo {
+  cursor: pointer;
   color: var(--dark-blue);
   font-weight: 700;
-  padding-bottom: 0;
+  /* padding-bottom: 0; */
 }
 
 .box__term--big.ativo {
+  cursor: pointer;
+
   color: var(--dark-blue);
   font-weight: 700;
 }
 
 .box__term::after {
   content: "";
+
   width: 0.625rem;
   height: 0.625rem;
+
   background: url(../images/icon-arrow-down.svg) no-repeat;
 }
 
 .box__term--big::after {
   content: "";
+
   width: 0.625rem;
   height: 0.625rem;
+
   background: url(../images/icon-arrow-down.svg) no-repeat;
 }
 
@@ -144,15 +162,18 @@ dd {
 .box__term--big.ativo::after {
   transform: rotate(180deg);
 }
+
 .box__description {
   color: var(--dark-grayish-blue);
+
   line-height: 1.5em;
   font-weight: 400;
 
+  width: 90%;
   height: 0;
   margin: 0;
+
   overflow: hidden;
-  width: 90%;
 }
 
 .box__description.ativo {
@@ -161,7 +182,7 @@ dd {
 }
 
 .box__description--big {
-  height: 70px;
+  height: 75px;
 }
 
 .box__divisor {
@@ -172,4 +193,51 @@ dd {
   content: "";
   display: block;
   border-bottom: 1px solid var(--light-grayish);
+}
+
+@media screen and (min-width: 768px) {
+  .box {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .box__description--big {
+    height: 40px;
+  }
+  .box__description.ativo {
+    height: 30px;
+    margin: 0;
+  }
+}
+@media screen and (min-width: 900px) {
+  .box {
+    overflow: hidden;
+    padding: 0;
+    flex-direction: row;
+    align-content: center;
+  }
+  /* WOMAN COMPUTER */
+  .box__images {
+    background: url("../images/bg-pattern-desktop.svg") no-repeat;
+    
+    width: 20rem;
+    height: 20rem;
+
+    flex: 1;
+  }
+
+  .box__woman {
+    background: url("../images/illustration-woman-online-desktop.svg") no-repeat;
+    top: 0;
+    left: -18%;
+    width: 30rem;
+    height: 22.625rem;
+    max-width:100%:
+  }
+  .box__title {
+    margin-top: 0;
+  }
+  .box2 {
+    flex: 1;
+    padding: 4.5625rem 5.9375rem 5.125rem 0;
+  }
 }
