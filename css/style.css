@@ -146,11 +146,13 @@ dd {
   margin: 0;
 
   overflow: hidden;
+  transition: height 0.3s ease-out;
 }
 
 .box__description.ativo {
   height: 34px;
   margin: 0.8em 0em 1.5em 0;
+  /* animation: teste 0.5s ease-in-out; */
 }
 
 .box__divisor {
@@ -252,8 +254,10 @@ dd {
 
   .box__description.ativo {
     height: 60px;
+    /* animation: teste2 0.5s ease-in; */
     margin: 0;
   }
+
   /* POSITIONING THE LITTLE BOX */
   .little-box {
     background: url("../images/illustration-box-desktop.svg");
